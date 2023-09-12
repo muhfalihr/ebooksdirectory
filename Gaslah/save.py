@@ -25,6 +25,7 @@ def saveResult(urls, opsi=''):
         dp = crawl.datePublished()
         numpage = crawl.numPage()
         isbn = crawl.isbn()
+        desc = crawl.desc()
         download_link = crawl.download_link(title)
 
         data = {
@@ -35,6 +36,7 @@ def saveResult(urls, opsi=''):
             'date_published': dp,
             'number_of_page': numpage,
             'isbn/asin': isbn,
+            'description': desc,
             'download_link': download_link
         }
         results.append(data)

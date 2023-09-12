@@ -1,0 +1,225 @@
+{
+    "status": 200,
+    "data": [
+        {
+            "title": "Mathematics for the Physical Sciences",
+            "thumbnail_url": "http://www.e-booksdirectory.com/imglrg/11704.jpg",
+            "author": "Leslie Copley",
+            "publisher": "De Gruyter Open",
+            "date_published": "2014",
+            "number_of_page": "446",
+            "isbn/asin": "9783110409475",
+            "description": "",
+            "download_link": "https://doi.org/10.2478/9783110409475"
+        },
+        {
+            "title": "Linear Algebra with Applications",
+            "thumbnail_url": "http://www.e-booksdirectory.com/imglrg/11734.jpg",
+            "author": "W. Keith Nicholson",
+            "publisher": "Lyryx",
+            "date_published": "2018",
+            "number_of_page": "698",
+            "isbn/asin": "",
+            "description": "",
+            "download_link": "https://lyryx.com/linear-algebra-applications/"
+        },
+        {
+            "title": "Circuit Theory",
+            "thumbnail_url": "http://www.e-booksdirectory.com/images/9321.jpg",
+            "author": "",
+            "publisher": "Wikibooks",
+            "date_published": "2013",
+            "number_of_page": "153",
+            "isbn/asin": "",
+            "description": "",
+            "download_link": "https://en.wikibooks.org/w/index.php?title=Special:DownloadAsPdf&page=Circuit_Theory&action=show-download-screen"
+        },
+        {
+            "title": "Human Physiology",
+            "thumbnail_url": "http://www.e-booksdirectory.com/images/1409.jpg",
+            "author": "",
+            "publisher": "Wikibooks",
+            "date_published": "2013",
+            "number_of_page": "552",
+            "isbn/asin": "",
+            "description": "",
+            "download_link": "https://en.wikibooks.org/w/index.php?title=Special:DownloadAsPdf&page=Human_Physiology&action=show-download-screen"
+        },
+        {
+            "title": "Principles of Accounting",
+            "thumbnail_url": "http://www.e-booksdirectory.com/images/2910.jpg",
+            "author": "Larry M. Walther",
+            "publisher": "principlesofaccounting.com",
+            "date_published": "2001",
+            "number_of_page": "",
+            "isbn/asin": "",
+            "description": "",
+            "download_link": ""
+        },
+        {
+            "title": "Motion Mountain",
+            "thumbnail_url": "http://www.e-booksdirectory.com/imglrg/1.jpg",
+            "author": "Christoph Schiller",
+            "publisher": "motionmountain.net",
+            "date_published": "2011",
+            "number_of_page": "1342",
+            "isbn/asin": "",
+            "description": "",
+            "download_link": "http://www.motionmountain.net/"
+        },
+        {
+            "title": "Introduction to Programming Using Java",
+            "thumbnail_url": "http://www.e-booksdirectory.com/imglrg/298.jpg",
+            "author": "David J. Eck",
+            "publisher": "Hobart and William Smith Colleges",
+            "date_published": "2014",
+            "number_of_page": "755",
+            "isbn/asin": "",
+            "description": "",
+            "download_link": "http://math.hws.edu/javanotes/"
+        },
+        {
+            "title": "Lessons In Electric Circuits",
+            "thumbnail_url": "http://www.e-booksdirectory.com/imglrg/370.jpg",
+            "author": "Tony R. Kuphaldt",
+            "publisher": "ibiblio.org",
+            "date_published": "2008",
+            "number_of_page": "2553",
+            "isbn/asin": "",
+            "description": "",
+            "download_link": "http://www.ibiblio.org/kuphaldt/electricCircuits/"
+        },
+        {
+            "title": "A Heat Transfer Textbook",
+            "thumbnail_url": "http://www.e-booksdirectory.com/imglrg/362.jpg",
+            "author": "John H. Lienhard IV, John H. Lienhard V",
+            "publisher": "Phlogiston Press",
+            "date_published": "2017",
+            "number_of_page": "768",
+            "isbn/asin": "",
+            "description": "",
+            "download_link": "http://web.mit.edu/lienhard/www/ahtt.html"
+        },
+        {
+            "title": "Introduction to Probability",
+            "thumbnail_url": "http://www.e-booksdirectory.com/imglrg/20.jpg",
+            "author": "C. M. Grinstead, J. L. Snell",
+            "publisher": "American Mathematical Society",
+            "date_published": "1997",
+            "number_of_page": "518",
+            "isbn/asin": "08218074989780821807491",
+            "description": "",
+            "download_link": "https://math.dartmouth.edu/~prob/prob/prob.pdf"
+        },
+        {
+            "title": "Mathematical Tools for Physics",
+            "thumbnail_url": "http://www.e-booksdirectory.com/imglrg/104.jpg",
+            "author": "James Nearing",
+            "publisher": "Dover Publications",
+            "date_published": "2010",
+            "number_of_page": "569",
+            "isbn/asin": "048648212X9780486482125",
+            "description": "",
+            "download_link": "http://www.physics.miami.edu/~nearing/mathmethods/"
+        },
+        {
+            "title": "The Scientist and Engineer's Guide to Digital Signal Processing",
+            "thumbnail_url": "http://www.e-booksdirectory.com/imglrg/363.jpg",
+            "author": "Steven W. Smith",
+            "publisher": "California technical Publishing",
+            "date_published": "1999",
+            "number_of_page": "650",
+            "isbn/asin": "09660176339780966017632",
+            "description": "",
+            "download_link": "http://www.dspguide.com/pdfbook.htm"
+        },
+        {
+            "title": "Real Variables: With Basic Metric Space Topology",
+            "thumbnail_url": "http://www.e-booksdirectory.com/imglrg/248.jpg",
+            "author": "Robert B. Ash",
+            "publisher": "Institute of Electrical & Electronics Engineering",
+            "date_published": "2007",
+            "number_of_page": "213",
+            "isbn/asin": "0486472205",
+            "description": "",
+            "download_link": "https://faculty.math.illinois.edu/~r-ash/RV.html"
+        },
+        {
+            "title": "A Mathematical Theory of Communication",
+            "thumbnail_url": "http://www.e-booksdirectory.com/imglrg/1121.jpg",
+            "author": "Claude Shannon",
+            "publisher": "",
+            "date_published": "1948",
+            "number_of_page": "",
+            "isbn/asin": "",
+            "description": "",
+            "download_link": "http://www.essrl.wustl.edu/~jao/itrg/shannon.pdf"
+        },
+        {
+            "title": "Computer Organization and Design Fundamentals",
+            "thumbnail_url": "http://www.e-booksdirectory.com/imglrg/62.jpg",
+            "author": "David Tarnoff",
+            "publisher": "Lulu.com",
+            "date_published": "2007",
+            "number_of_page": "434",
+            "isbn/asin": "14116369029781411636903",
+            "description": "",
+            "download_link": "http://faculty.etsu.edu/tarnoff/138292/"
+        },
+        {
+            "title": "Linear Algebra",
+            "thumbnail_url": "http://www.e-booksdirectory.com/imglrg/66.jpg",
+            "author": "Jim Hefferon",
+            "publisher": "Saint Michael's College",
+            "date_published": "2017",
+            "number_of_page": "507",
+            "isbn/asin": "",
+            "description": "",
+            "download_link": "http://joshua.smcvt.edu/linearalgebra/"
+        },
+        {
+            "title": "Conceptual Physics",
+            "thumbnail_url": "http://www.e-booksdirectory.com/imglrg/2.jpg",
+            "author": "Benjamin Crowell",
+            "publisher": "Lightandmatter.com",
+            "date_published": "2017",
+            "number_of_page": "185",
+            "isbn/asin": "",
+            "description": "",
+            "download_link": "http://www.lightandmatter.com/cp/index.html"
+        },
+        {
+            "title": "Differential Calculus",
+            "thumbnail_url": "http://www.e-booksdirectory.com/images/10512.jpg",
+            "author": "Shanti Narayan",
+            "publisher": "S. Chand And Company",
+            "date_published": "1962",
+            "number_of_page": "429",
+            "isbn/asin": "",
+            "description": "",
+            "download_link": ""
+        },
+        {
+            "title": "Invent Your Own Computer Games with Python",
+            "thumbnail_url": "http://www.e-booksdirectory.com/imglrg/1070.jpg",
+            "author": "Albert Sweigart",
+            "publisher": "",
+            "date_published": "2015",
+            "number_of_page": "",
+            "isbn/asin": "",
+            "description": "",
+            "download_link": ""
+        },
+        {
+            "title": "A First Course in Linear Algebra",
+            "thumbnail_url": "http://www.e-booksdirectory.com/imglrg/106.jpg",
+            "author": "Robert A. Beezer",
+            "publisher": "University of Puget Sound",
+            "date_published": "2010",
+            "number_of_page": "1035",
+            "isbn/asin": "B00262XN6S",
+            "description": "",
+            "download_link": "http://linear.ups.edu/download.html"
+        }
+    ]
+}

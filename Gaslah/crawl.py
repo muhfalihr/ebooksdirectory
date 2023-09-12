@@ -55,6 +55,12 @@ class CrawlDetail:
         return ''.join([span.text for p in article[1].find_all('p') for strong in p.find_all('strong') if strong.text == 'Publisher' for span in p.find_all(
             'span', itemprop='isbn')])
 
+    def desc(self):
+        article = self.articles()
+
+        return ''.join([span.text for p in article[1].find_all('p') for strong in p.find_all('strong') if strong.text == 'Publisher' for span in p.find_all(
+            'span', itemprop='description')])
+
     def download_link(self, title):
         article = self.articles()
         url = ''.join([href['href'] for href in article[1].find_all(
