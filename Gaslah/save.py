@@ -11,6 +11,10 @@ def saveResult(urls, opsi=''):
         take = urls
 
     results = []
+    datas = {
+        'status': 200,
+        'data': results
+    }
     count = 1
     for link in take:
         crawl = CrawlDetail(link)
@@ -35,7 +39,7 @@ def saveResult(urls, opsi=''):
         }
         results.append(data)
 
-        dumps = json.dumps(results, indent=4)
+        dumps = json.dumps(datas, indent=4)
         try:
             category = ebookNum(urls)
         except:
@@ -51,3 +55,17 @@ def saveResult(urls, opsi=''):
         print(f'\rData {count} berhasil', end="")
         count += 1
     print()
+
+
+def saveError():
+    datas = {
+        'status': 400,
+        'data': []
+    }
+    dumps = json.dumps(datas, indent=4)
+    try:
+        with open(f'Results/detail_ERROR.json', 'w') as file:
+            file.write(dumps)
+    except:
+        with open(f'Results/detail_ERROR.json', 'r+') as file:
+            file.write(dumps)

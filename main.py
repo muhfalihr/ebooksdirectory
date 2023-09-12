@@ -1,4 +1,4 @@
-from Gaslah import categories, soup, Categories, saveResult, takeNTP
+from Gaslah import categories, soup, Categories, saveResult, takeNTP, saveError
 import os
 
 
@@ -37,10 +37,16 @@ while True:
             yn = input('Crawling Categori ini aja (y/n):\n> ')
             match yn.lower():
                 case 'y':
-                    saveResult(clLink[select1-1])
+                    try:
+                        saveResult(clLink[select1-1])
+                    except IndexError:
+                        saveError()
                 case 'n':
                     select2 = int(input('Crawling data by number:\n> '))
-                    saveResult(scLink[select1-1][select2-1])
+                    try:
+                        saveResult(scLink[select1-1][select2-1])
+                    except IndexError:
+                        saveError()
                 case _:
                     print('Nggak ada bang')
 
