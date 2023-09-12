@@ -42,7 +42,7 @@ def clean(text):
     cleaned_text = re.sub(r'\s+', ' ', cleaned)
     normalized = unicodedata.normalize('NFKD', cleaned_text)
     ascii_text = normalized.encode('ascii', 'ignore').decode('ascii')
-    replace_text = ascii_text.replace('\"', "'")
+    replace_text = ascii_text.replace('\"', "'").replace('\r\n', ' - ')
     if replace_text[0] == ' ' and replace_text[-1] == ' ':
         return replace_text[1:-1]
     if replace_text[0] == ' ':

@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 from .downloader import download
+from .utility import clean
 
 
 class CrawlDetail:
@@ -26,7 +27,7 @@ class CrawlDetail:
 
     def title(self):
         article = self.articles()
-        return ''.join([strong.text for strong in article[1].find_all(
+        return ''.join([clean(strong.text) for strong in article[1].find_all(
             'strong', itemprop='name')])
 
     def author(self):
@@ -36,30 +37,25 @@ class CrawlDetail:
 
     def publisher(self):
         article = self.articles()
-        return ''.join([span.text for p in article[1].find_all('p') for strong in p.find_all('strong') if strong.text == 'Publisher' for span in p.find_all(
-            'span', itemprop='name')])
+        return ''.join([span.text for p in article[1].find_all('p') for span in p.find_all('span', itemprop='publisher')])
 
     def datePublished(self):
         article = self.articles()
-        return ''.join([span.text for span in article[1].find_all(
-            'span', itemprop='datePublished')])
+        return ''.join([span.text for span in article[1].find_all('span', itemprop='datePublished')])
 
     def numPage(self):
         article = self.articles()
-        return ''.join([span.text for p in article[1].find_all('p') for strong in p.find_all('strong') if strong.text == 'Publisher' for span in p.find_all(
-            'span', itemprop='numberOfPages')])
+        return ''.join([span.text for p in article[1].find_all('p') for span in p.find_all('span', itemprop='numberOfPages')])
 
     def isbn(self):
         article = self.articles()
 
-        return ''.join([span.text for p in article[1].find_all('p') for strong in p.find_all('strong') if strong.text == 'Publisher' for span in p.find_all(
-            'span', itemprop='isbn')])
+        return ''.join([span.text for p in article[1].find_all('p') for span in p.find_all('span', itemprop='isbn')])
 
     def desc(self):
         article = self.articles()
 
-        return ''.join([span.text for p in article[1].find_all('p') for strong in p.find_all('strong') if strong.text == 'Publisher' for span in p.find_all(
-            'span', itemprop='description')])
+        return ''.join([clean(span.text) for p in article[1].find_all('p') for span in p.find_all('span', itemprop='description')])
 
     def download_link(self, title):
         article = self.articles()
