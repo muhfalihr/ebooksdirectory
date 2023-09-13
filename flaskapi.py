@@ -22,7 +22,7 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/e-booksdirectory/search')
+@app.route('/api/e-booksdirectory/search')
 def search():
     filters = request.args.get('filters')
     match filters:
