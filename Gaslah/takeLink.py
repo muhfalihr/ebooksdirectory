@@ -2,6 +2,17 @@ from .utility import wov, soup
 from .kategori import Categories
 import requests
 from bs4 import BeautifulSoup
+import json
+
+
+def takeHref(links):
+    try:
+        linkhref = ['http://www.e-booksdirectory.com/' + a['href'] for item in soup(
+            links) for article in item.find_all('article', 'img_list') for a in article.find_all('a')]
+    except:
+        linkhref = ['http://www.e-booksdirectory.com/' + a['href'] for link in links if link != '' for item in soup(
+            link) for article in item.find_all('article', 'img_list') for a in article.find_all('a')]
+    return linkhref
 
 
 def takeLinkCategories():
@@ -12,28 +23,21 @@ def takeLinkCategories():
 
     clText = kategori.cat_largeText()
     clLink = kategori.cat_largeLink()
-    csText = kategori.cat_smallText(clText)
     csLink = kategori.cat_smallLink()
 
-    main_character = []
+    all_categories = []
     for i in range(len(clText)):
-        data = {
-            "categories": wov(clText[i]),
-            "categories_link": wov(clLink[i]),
-            "sub_categories": wov(csText[i]),
-            "subcat_link": wov(csLink[i])
-        }
-        main_character.append(data)
+        data = takeHref(clLink[i]) + takeHref(csLink[i])
+        all_categories.append(data)
 
-    return main_character
+        dumps = json.dumps(all_categories, indent=4)
 
-
-def takeHref(link):
-
-    linkhref = ['http://www.e-booksdirectory.com/' + a['href'] for item in soup(
-        link) for article in item.find_all('article', 'img_list') for a in article.find_all('a')]
-
-    return linkhref
+        try:
+            with open('links.json', 'w') as file:
+                file.write(dumps)
+        except:
+            with open('links.json', 'r+') as file:
+                file.write(dumps)
 
 
 def takeNTP(page: int, option: str):

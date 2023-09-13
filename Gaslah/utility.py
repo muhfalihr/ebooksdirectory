@@ -4,15 +4,12 @@ from bs4 import BeautifulSoup
 import requests
 
 
-def user_agent():
-    useragent = {
-        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'}
-    return useragent
-
-
 def soup(link):
 
-    req = requests.get(link, headers=user_agent())
+    user_agent = {
+        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'}
+
+    req = requests.get(link, headers=user_agent)
 
     soup = BeautifulSoup(req.text, 'lxml')
 
@@ -82,7 +79,8 @@ def categories():
         'Outdoors & Nature',
         'Religion & Spirituality',
         'Science',
-        'Science Fiction & Fantasy'
+        'Science Fiction & Fantasy',
+        'Travel'
     ]
     return category
 

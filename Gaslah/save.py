@@ -5,18 +5,14 @@ from .utility import ebookNum
 
 
 def saveResult(urls, opsi=''):
-    try:
-        take = takeHref(urls)
-    except:
-        take = urls
 
     results = []
     datas = {
         'status': 200,
         'data': results
     }
-    count = 1
-    for link in take:
+    # count = 1
+    for link in urls:
         crawl = CrawlDetail(link)
         image = crawl.img()
         title = crawl.title()
@@ -42,21 +38,17 @@ def saveResult(urls, opsi=''):
         results.append(data)
 
         dumps = json.dumps(datas, indent=4)
-        try:
-            category = ebookNum(urls)
-        except:
-            category = opsi
 
         try:
-            with open(f'Results/detail_category{category}.json', 'w') as file:
+            with open(f'Results/detail_category_{opsi}.json', 'w') as file:
                 file.write(dumps)
         except:
-            with open(f'Results/detail_category{category}.json', 'r+') as file:
+            with open(f'Results/detail_category_{opsi}.json', 'r+') as file:
                 file.write(dumps)
 
-        print(f'\rData {count} berhasil', end="")
-        count += 1
-    print()
+    # print(f'\rData {count} berhasil', end="")
+    # count += 1
+    # print()
 
 
 def saveError():

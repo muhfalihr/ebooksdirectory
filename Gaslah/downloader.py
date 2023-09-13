@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
-from .utility import idDownload, charSpecial, idLink, soup as s, unique
+from .utility import idDownload, charSpecial, idLink, soup as s
 
 
 def download(url, title=''):
@@ -18,17 +18,17 @@ def download(url, title=''):
             id, judul)
         return link_download
 
-    elif 'gutenberg' in url:
+    # elif 'gutenberg' in url:
 
-        resp = requests.get(url, headers=user_agent)
+    #     resp = requests.get(url, headers=user_agent)
 
-        soup = BeautifulSoup(resp.text, 'lxml')
+    #     soup = BeautifulSoup(resp.text, 'lxml')
 
-        items = soup.find_all('div', id='download')
+    #     items = soup.find_all('div', id='download')
 
-        link_download = ''.join(['https://www.gutenberg.org' + a['href'] for item in items for tr in item.find_all(
-            'tr', 'odd') for a in tr.find_all('a', title='Download') if a.text == 'EPUB (no images, older E-readers)' or a.text == 'Audio Book Index'])
-        return url if link_download == '' else link_download
+    #     link_download = ''.join(['https://www.gutenberg.org' + a['href'] for item in items for tr in item.find_all(
+    #         'tr', 'odd') for a in tr.find_all('a', title='Download') if a.text == 'EPUB (no images, older E-readers)' or a.text == 'Audio Book Index'])
+    #     return url if link_download == '' else link_download
 
     elif 'archive' in url:
 
@@ -149,8 +149,3 @@ def download(url, title=''):
 
     else:
         return url
-
-
-link = download(
-    'https://www.nasa.gov/connect/ebooks/crash_course_detail.html')
-print(link)
