@@ -9,7 +9,7 @@ app = Flask(__name__, template_folder='template')
 def root():
     return """
     <h1>Simulasi Swagger UI hehe:)</h1>
-<a href="/e-booksdirectory" >GASSS</a>"""
+<a href="/api/e-booksdirectory" >KLIK INI BANG</a>"""
 
 
 @app.route('/api')
