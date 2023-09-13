@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from Gaslah import saveResult, takeNTP, links
 import json
 
@@ -8,11 +8,16 @@ app = Flask(__name__, template_folder='template')
 @app.route('/')
 def root():
     return """
-    <h1>API Percobaan</h1>
+    <h1>Simulasi Swagger UI hehe:)</h1>
 <a href="/e-booksdirectory" >GASSS</a>"""
 
 
-@app.route('/e-booksdirectory')
+@app.route('/api')
+def api():
+    return redirect(url_for('root'))
+
+
+@app.route('/api/e-booksdirectory')
 def home():
     return render_template('index.html')
 

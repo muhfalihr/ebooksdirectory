@@ -1,7 +1,6 @@
 from .takeLink import takeHref
 from .crawl import CrawlDetail
 import json
-from .utility import ebookNum
 
 
 def saveResult(urls, opsi=''):
