@@ -37,7 +37,7 @@ class CrawlDetail:
 
     def publisher(self):
         article = self.articles()
-        return ''.join([span.text for p in article[1].find_all('p') for span in p.find_all('span', itemprop='publisher')])
+        return ''.join([clean(span.text) for p in article[1].find_all('p') for span in p.find_all('span', itemprop='publisher')])
 
     def datePublished(self):
         article = self.articles()
