@@ -3,14 +3,14 @@ from .crawl import CrawlDetail
 import json
 
 
-def saveResult(urls, opsi=''):
+def returnSuccess(urls):
 
     results = []
     datas = {
         'status': 200,
         'data': results
     }
-    # count = 1
+
     for link in urls:
         crawl = CrawlDetail(link)
         image = crawl.img()
@@ -21,7 +21,7 @@ def saveResult(urls, opsi=''):
         numpage = crawl.numPage()
         isbn = crawl.isbn()
         desc = crawl.desc()
-        download_link = crawl.download_link(title)
+        origin_site = crawl.download_link(title)
 
         data = {
             'title': title,
@@ -32,33 +32,19 @@ def saveResult(urls, opsi=''):
             'number_of_page': numpage,
             'isbn/asin': isbn,
             'description': desc,
-            'download_link': download_link
+            'original_site': origin_site
         }
         results.append(data)
 
         dumps = json.dumps(datas, indent=4)
 
-        try:
-            with open(f'Results/detail_category_{opsi}.json', 'w') as file:
-                file.write(dumps)
-        except:
-            with open(f'Results/detail_category_{opsi}.json', 'r+') as file:
-                file.write(dumps)
-
-    # print(f'\rData {count} berhasil', end="")
-    # count += 1
-    # print()
+    return dumps
 
 
-def saveError():
+def returnError():
     datas = {
         'status': 400,
         'data': []
     }
     dumps = json.dumps(datas, indent=4)
-    try:
-        with open(f'Results/detail_ERROR.json', 'w') as file:
-            file.write(dumps)
-    except:
-        with open(f'Results/detail_ERROR.json', 'r+') as file:
-            file.write(dumps)
+    return dumps

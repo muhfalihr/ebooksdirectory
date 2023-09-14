@@ -1,5 +1,4 @@
-from .save import saveResult, saveError
+from .save import returnSuccess, returnError
 from .takeLink import takeNTP
-from .listLinks import links
 from .kategori import Categories
 from .utility import categories, soup

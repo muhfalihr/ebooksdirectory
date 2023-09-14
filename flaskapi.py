@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from Gaslah import saveResult, takeNTP, links
+from Gaslah import returnSuccess, returnError, takeNTP
 import json
 
 app = Flask(__name__, template_folder='template')
@@ -25,22 +25,35 @@ def home():
 @app.route('/api/e-booksdirectory/search')
 def search():
     filters = request.args.get('filters')
+    with open('Links/listLinks.json', 'r') as file:
+        links = json.load(file)
     match filters:
         case 'cat':
             value = request.args.get('cat')
-            saveResult(links[int(value)-1], value)
-            with open(f'Results/detail_category_{value}.json', 'r') as file:
-                datas = json.load(file)
+            try:
+                results = returnSuccess(links[int(value)-1])
+            except:
+                results = returnError()
+            return """
+<html>
+<body style="background-color: black;">
+    <pre style="color: white; font-family: monospace; ">{}</pre>
+</body>
+</html>""".format(results)
 
-            return datas
         case 'new' | 'top' | 'popular':
             countpage = request.args.get('countpage')
-            urls = takeNTP(int(countpage), filters)
-            saveResult(urls, filters)
-            with open(f'Results/detail_category_{filters}.json', 'r') as file:
-                datas = json.load(file)
-
-            return datas
+            try:
+                urls = takeNTP(int(countpage), filters)
+                results = returnSuccess(urls)
+            except:
+                results = returnError()
+            return """
+<html>
+<body style="background-color: black;">
+    <pre style="color: white; font-family: monospace; ">{}</pre>
+</body>
+</html>""".format(results)
 
 
 app.run(debug=True, host='10.1.22.0')
